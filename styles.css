@@ -27,25 +27,63 @@ a {
 
 .calculator{
     width: 90vw;
-    
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 
 .title-toggler{
+    width: 19.6rem;
     height: 2.5rem;
+    margin-bottom: 10px;
     display: grid;
     grid-template-columns: 4fr 0.4fr;
 }
 
+#display{
+    margin: 0 10px;
+    height: 3rem;
+    width: auto;
+    max-width: 270px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    overflow: scrolls;
+}
+
+.display-screen{
+    width: 19.3rem;
+    background-color: #e8e8e8;
+}
+
+#display::-webkit-scrollbar{
+    display: block;
+    width: 3px;
+}
 
 .buttons{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    margin-top: 10px;
 }
 
 button{
-    width: 5.7rem;
-    height: 5.7rem;
+    width: 5.7em;
+    height: 5.7em;
+
+}
+
+button#clear{
+    width: 11.6em;
+}
+
+button#equal{
+    height: 11.4em;
 }
 
 
