@@ -10,6 +10,7 @@
 
 body{
     font-family: 'IBM Plex Mono', monospace;
+    display: grid;
 }
 
 a {
@@ -22,7 +23,7 @@ a {
     width: 100vw;
     display: grid;
     place-items: center;
-    background-color: #888;
+    background: linear-gradient(135deg, #eebbc3 0%, #b8c1ec 100%);
 }
 
 .calculator{
@@ -32,153 +33,155 @@ a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+} 
+
+.title-display{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-
-.title-toggler{
-    width: 19.6rem;
+.title{
+    width: 15rem;
     height: 2.5rem;
     margin-bottom: 10px;
-    display: grid;
-    grid-template-columns: 4fr 0.4fr;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    background-color: #232946;
+    color: #fff;
 }
 
 #display{
-    margin: 0 10px;
+    /* margin: 0 10px 0 10px; */
     height: 3rem;
-    width: auto;
+    width: auto; 
     max-width: 270px;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: flex-end;
     font-size: 2rem;
-    margin-bottom: 2rem;
-    overflow: scrolls;
+    overflow: hidden;
 }
 
 .display-screen{
-    width: 19.3rem;
+    width: 20.6rem;
+    color:#232946;
     background-color: #e8e8e8;
 }
 
-#display::-webkit-scrollbar{
-    display: block;
-    width: 3px;
-}
-
 .buttons{
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows:  1fr 1fr 1fr 1fr 1fr;
     margin-top: 10px;
 }
 
-button{
-    width: 5.7em;
-    height: 5.7em;
 
+
+button{
+    width: 6.1em;
+    height: 6.1em;
+    border: none;
+    padding: 12.5px 30px;
+    background-color: #232946;
+    color: #ffffff;
+    font-weight: Bold;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
 }
 
-button#clear{
-    width: 11.6em;
+button:active {
+    background-color: #eebbc3;
+    transition: all 0.25s;
+    -webkit-transition: all 0.25s;
+    box-shadow: none;
+}
+
+button:hover {
+    background-color: #b8c1ec;
+    box-shadow: 0 0 20px #6fc5ff50;
 }
 
 button#equal{
-    height: 11.4em;
+    height: 12.3em;
+    grid-row: -1 / -3;
+    grid-column: -2 / -1;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* The switch - the box around the slider */
-.switch {
-  /* Variables */
- --switch_width: 2em;
- --switch_height: 1em;
- --thumb_color: #e8e8e8;
- --track_color: #e8e8e8;
- --track_active_color: #888;
- --outline_color: #000;
- font-size: 17px;
- position: relative;
- display: inline-block;
- width: var(--switch_width);
- height: var(--switch_height);
+button#clear{
+    width: 12.3em;
+    grid-row: 1 / 2;
+    grid-column: 1 / 3;
 }
+  
 
-/* Hide default HTML checkbox */
-.switch input {
- opacity: 0;
- width: 0;
- height: 0;
-}
+  
 
-/* The slider */
-.slider {
- box-sizing: border-box;
- border: 2px solid var(--outline_color);
- position: absolute;
- cursor: pointer;
- top: 0;
- left: 0;
- right: 0;
- bottom: 0;
- background-color: var(--track_color);
- transition: .15s;
- border-radius: var(--switch_height);
-}
+   
+/* -------------- DESKTOP -------- */
+/* -------------- DESKTOP -------- */
+/* -------------- DESKTOP -------- */
+  
+@media screen and (min-width: 900px){
 
-.slider:before {
- box-sizing: border-box;
- position: absolute;
- content: "";
- height: var(--switch_height);
- width: var(--switch_height);
- border: 2px solid var(--outline_color);
- border-radius: 100%;
- left: -2px;
- bottom: -2px;
- background-color: var(--thumb_color);
- transform: translateY(-0.2em);
- box-shadow: 0 0.2em 0 var(--outline_color);
- transition: .15s;
-}
+    .container{
+        background: #232946;
+    }
 
-input:checked + .slider {
- background-color: var(--track_active_color);
-}
+    .calculator{
+        width: 55em;
+        height: 30em;
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        background: linear-gradient(135deg, #eebbc3 0%, #b8c1ec 100%);
+        border-radius: 7px;
+        /* box-shadow: 5px 5px 10px #bebebe, 
+                    -5px -5px 10px #ffffff; */
+    }
 
-input:focus-visible + .slider {
- box-shadow: 0 0 0 2px var(--track_active_color);
-}
+    .title-display{
+        margin-left: 20px;        
+        align-items: flex-start;
+    
+    }
 
-/* Raise thumb when hovered */
-input:hover + .slider:before {
- transform: translateY(-0.3em);
- box-shadow: 0 0.3em 0 var(--outline_color);
-}
+    .buttons{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        margin-top: 10px;
+    }
 
-input:checked + .slider:before {
- transform: translateX(calc(var(--switch_width) - var(--switch_height))) translateY(-0.2em);
-}
+    button#clear{
+        width: 12.2em;
+        grid-row: 1 / 2;
+        grid-column: 1 / 3;
+    }
+    
+    button#equal{
+        height: 12.2em;
+        grid-row: -1 / -3;
+        grid-column: -2 / -1;
+    }
 
-/* Raise thumb when hovered & checked */
-input:hover:checked + .slider:before {
- transform: translateX(calc(var(--switch_width) - var(--switch_height))) translateY(-0.3em);
- box-shadow: 0 0.3em 0 var(--outline_color);
+    button#zero{
+        order: -3;
+    }
+
+    button#multiply{
+        order: -2;
+    }
+
+    button#plus{
+        grid-row: -4 / -3;
+        grid-column: 5 / 6;
+    }
+
+    button#dot{
+        grid-row: -3 / -2;
+        grid-column: -3 / -2;
+    }
 }

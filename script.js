@@ -1,5 +1,5 @@
-const display = document.querySelector('#display')
-const buttons = document.querySelectorAll('button')
+const display = document.querySelector('#display');
+const buttons = document.querySelectorAll('button');
 
 buttons.forEach((item) => {
     item.onclick = () => {
@@ -17,5 +17,5 @@ buttons.forEach((item) => {
             display.innerText += item.id;
         }
     }
-}
-)
+})
+
